@@ -11,7 +11,6 @@ pipeline {
         }
         stage ("building & testing the code with sonar") {
             steps {
-def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv('SonarQube_token') { // If you have configured more than one global server connection, you can specify its name
                sh "mvn clean install sonar:sonar" 
             }          
