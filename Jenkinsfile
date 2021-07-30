@@ -11,7 +11,8 @@ pipeline {
         }
         stage ("building & testing the code with sonar") {
             steps {
-       <sonar.host.url>http://192.168.50.170:9000</sonar.host.url>
+def scannerHome = tool 'SonarScanner';
+    withSonarQubeEnv('SonarQube_token') { // If you have configured more than one global server connection, you can specify its name
                sh "mvn clean install sonar:sonar" 
             }          
         }
