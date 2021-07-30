@@ -51,26 +51,6 @@
 		</dependency>
 	</dependencies>
       
-<distributionManagement>
-    <snapshotRepository>
-        <id>snapshots</id>
-        <name>358fb1f088f1-snapshots</name>
-        <url>http://192.168.50.170:8081/artifactory/bankinfo_main-libs-snapshot-local</url>
-    </snapshotRepository>
-</distributionManagement>
-
-<repositories>
-
-    <repository>
-        <id>central</id>
-        <name>Central Repository</name>
-        <url>https://repo.maven.apache.org/maven2</url>
-        <layout>default</layout>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-    </repository>
-
 </repositories>
 	<build>
 		<plugins>
