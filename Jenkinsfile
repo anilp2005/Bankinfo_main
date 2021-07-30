@@ -11,6 +11,7 @@ pipeline {
         }
         stage ("building & testing the code with sonar") {
             steps {
+       <sonar.host.url>http://192.168.50.170:9000</sonar.host.url>
                sh "mvn clean install sonar:sonar" 
             }          
         }
