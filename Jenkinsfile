@@ -6,7 +6,7 @@ pipeline {
      stages {
         stage ("cloning git repo") {
             steps {
-               git branch: 'master', url: 'https://github.com/gowthamvishnu/BankInfo-1.git'    
+               git branch: 'master', url: 'https://github.com/anilp2005/Bankinfo_main.git'    
             }          
         }
         stage ("building & testing the code with sonar") {
@@ -25,7 +25,7 @@ pipeline {
                     id: 'Artifactory',
                     url: 'http://192.168.50.170:8082/artifactory',
                     username: 'admin',
-                    password: 'Admin@123',
+                    password: 'password',
                     bypassProxy: true,
                     timeout: 300
                 )
@@ -39,7 +39,7 @@ pipeline {
                   "files": [
                    {
                   "pattern": "*.jar",
-                  "target": "vishnurepo-libs-snapshot-local/"
+                  "target": "bankinfo_main-libs-snapshot-local/"
                 }
                  ]
                 }''',
@@ -51,7 +51,7 @@ pipeline {
               sh  "rm -rf /var/lib/jenkins/workspace/multibranch_pipeline_master/BankInfo-1"
               sh  "docker rm -f bankinfocontainer"
               sh  "docker rmi -f bankinfoimage"
-              sh  "git clone https://github.com/gowthamvishnu/BankInfo-1.git"
+              sh  "git clone https://github.com/anilp2005/Bankinfo_main.git"
               sh  "cd BankInfo-1"
               sh  "cp /var/lib/jenkins/workspace/multibranch_pipeline_master/target/BankInfo-0.0.1-SNAPSHOT.jar ."
               sh  "sudo docker build -t bankinfoimage ." 
