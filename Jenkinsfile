@@ -17,7 +17,7 @@ pipeline {
                -Dsonar.login=admin \
                -Dsonar.password=password \
                -Dsonar.projectKey=Bankinfo_main \
-          -D sonar.host.url=http://192.168.50.170:9000/*
+               -Dsonar.host.url=http://192.168.50.170:9000/"
               }
             }          
         }
