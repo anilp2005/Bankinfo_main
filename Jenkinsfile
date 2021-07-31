@@ -12,7 +12,6 @@ pipeline {
         stage ("building & testing the code with sonar") {
             steps {
                sh "mvn clean install sonar:sonar" 
-              }
             }          
         }
         stage ('Code Quality') {
