@@ -11,7 +11,14 @@ pipeline {
         }
         stage ("building & testing the code with sonar") {
             steps {
+               def scannerHome = tool 'SonarQube_token';
+               withSonarQubeEnv('SonarQube_token'){
                sh "mvn clean install sonar:sonar" 
+               -D sonar.login=admin \
+               -D sonar.password=password \
+               -D sonar.projectKey=Bankinfo_main \
+          -D sonar.host.url=http://192.168.50.170:9000/*
+              }
             }          
         }
         stage ('Code Quality') {
