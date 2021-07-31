@@ -14,7 +14,6 @@ pipeline {
                def scannerHome = tool 'SonarQube_token';
                withSonarQubeEnv('SonarQube_token'){
                sh "mvn clean install sonar:sonar" 
-               -Dsonar.projectKey=Bankinfo_main \
               }
             }          
         }
