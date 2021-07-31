@@ -11,8 +11,6 @@ pipeline {
         }
         stage ("building & testing the code with sonar") {
             steps {
-               def scannerHome = tool 'SonarQube_token';
-               withSonarQubeEnv('SonarQube_token'){
                sh "mvn clean install sonar:sonar" 
               }
             }          
