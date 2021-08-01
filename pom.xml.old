@@ -14,9 +14,11 @@
 	<name>BankInfo</name>
 	<description>Demo project for Spring Boot</description>
 
-	<properties>
+        <properties>
 		<java.version>1.8</java.version>
-	</properties>
+                <sonar.projectKey>Bankinfo_main</sonar.projectKey>
+                <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
+        </properties>
 
 	<dependencies>
 		<dependency>
@@ -49,11 +51,23 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-	</dependencies>
+                <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+                <dependency>
+                          <groupId>org.sonarsource.scanner.maven</groupId>
+                          <artifactId>sonar-maven-plugin</artifactId>
+                          <version>3.9.0.2155</version>
+                 </dependency>
 
+	</dependencies>
+      
 	<build>
 		<plugins>
-			<plugin>
+		       <plugin>
+                              <groupId>org.sonarsource.scanner.maven</groupId>
+                              <artifactId>sonar-maven-plugin</artifactId>
+                              <version>3.7.0.1746</version>
+                        </plugin>	
+                        <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
