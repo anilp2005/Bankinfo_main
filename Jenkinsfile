@@ -11,8 +11,7 @@ pipeline {
         }
         stage ("building & testing the code with sonar") {
             steps {
-            def mvn = tool 'Default Maven';
-    withSonarQubeEnv() {
+    withSonarQubeEnv('http://192.168.50.170:9000') {
       sh "${mvn}/bin/mvn sonar:sonar"
             }          
         }
