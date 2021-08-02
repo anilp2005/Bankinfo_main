@@ -16,6 +16,7 @@ pipeline {
       sh "${mvn}/bin/mvn sonar:sonar"
             }          
         }
+       }
         stage ('Code Quality') {
             steps {
                 jacoco()
