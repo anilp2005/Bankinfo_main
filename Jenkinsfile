@@ -11,7 +11,7 @@ pipeline {
         }
         stage ("building & testing the code with sonar") {
             steps {
-    withSonarQubeEnv('http://192.168.50.170:9000') {
+    withSonarQubeEnv('SonarQube_token') {
       sh "${mvn}/bin/mvn sonar:sonar"
             }          
         }
