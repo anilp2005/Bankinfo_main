@@ -11,7 +11,9 @@ pipeline {
         }
         stage ("building & testing the code with sonar") {
             steps {
-               sh "mvn clean install sonar:sonar -Dsonar.jdbc.url=jdbc:h2:tcp://192.168.50.170:9092/sonar -Dsonar.host.url=http://192.168.50.170:9000" 
+            def mvn = tool 'Default Maven';
+    withSonarQubeEnv() {
+      sh "${mvn}/bin/mvn sonar:sonar"
             }          
         }
         stage ('Code Quality') {

@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+                <sonar.projectKey>com.Bankinfo_main:Bankinfo_main</sonar.projectKey>
 	</properties>
 
 	<dependencies>
