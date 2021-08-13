@@ -25,9 +25,9 @@ pipeline {
             steps {
                 rtServer (
                     id: 'Artifactory',
-                    url: 'http://192.168.50.170:8082/artifactory',
+                    url: 'http://192.168.50.130:8082',
                     username: 'admin',
-                    password: 'password',
+                    password: 'Admin@2021',
                     bypassProxy: true,
                     timeout: 300
                 )
